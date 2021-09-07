@@ -1,0 +1,4 @@
+transformers==3.5.1
+allennlp==1.2.2
+tqdm
+tensorboard
