@@ -1,9 +1,10 @@
 # Iconary
 This is the code for our paper
-"Iconary: A Pictionary-Based Game for Testing MultimodalCommunication with Drawings and Text"
+"Iconary: A Pictionary-Based Game for Testing Multimodal Communication with Drawings and Text".
+It includes the datasets, models we trained, and our training/evaluations scripts.
 
 ## Install
-Install python >= 3.6 and pytorch >= 1.6.0. This project has been tested with torch==1.7.1, but 
+Install python >= 3.6 and pytorch >= 1.7.0. This project has been tested with torch==1.7.1, but 
 later versions might work.
 
 Then install the extra requirements:
