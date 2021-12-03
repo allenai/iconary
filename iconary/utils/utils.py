@@ -1,8 +1,8 @@
 import json
 import logging
 import sys
-from os import listdir, walk, makedirs
-from os.path import exists, dirname, basename, join, relpath, isdir
+from os import listdir, makedirs
+from os.path import exists, dirname, basename, join, isdir
 from typing import Iterable, List, TypeVar, Tuple, Dict
 
 import boto3
