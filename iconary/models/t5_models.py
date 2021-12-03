@@ -12,7 +12,7 @@ from iconary.models.game_phrase_to_text import GamePhraseToText
 from iconary.models.game_to_text import T5GameToText
 from iconary.models.iconary_model import IconaryModel
 from iconary.models.t5_decoding import t5_initialize_decoding, t5_decoding_token_constraints
-from iconary.utils import utils, ops
+from iconary.utils import utils
 from iconary.utils.utils import to_device
 from torch.nn import functional as F, CrossEntropyLoss
 import numpy as np
@@ -296,7 +296,7 @@ class TDrawer(IconaryModel):
       constraints = self.constraint_matrix.repeat(labels.size(1) // 6, 1)
       constraints = torch.cat([constraints, self.constraint_matrix[:1]], 0)
       constraints = constraints.unsqueeze(0)
-      lm_logits = ops.mask_logits(lm_logits, constraints)
+      lm_logits = utils.mask_logits(lm_logits, constraints)
 
     loss_fct = CrossEntropyLoss(ignore_index=-100)
     loss = loss_fct(lm_logits.view(-1, lm_logits.size(-1)), labels.view(-1))
