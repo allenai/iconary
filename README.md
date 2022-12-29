@@ -98,6 +98,22 @@ This script will report our automatic metrics, but they can also be re-computed 
 `python iconary/experiments/eval_drawings.py drawings.json`
 
 
+## Visualization
+Games can be visualized in html using utils/visualize.py, for example:
+
+```python
+from iconary.data.datasets import IconaryDataset
+from iconary.utils.visualize import GameVisualizer
+
+viz = GameVisualizer()
+games = IconaryDataset("ind-valid").load()
+html = viz.render_game(games[0])
+with open("out.html", "w") as f:
+    f.write(html)
+```
+
+Then `out.html` can be viewed in a web browser.
+
 ## Human/AI Evaluation
 Our code for running human/AI games is not currently released, if you are interested in running your own trials
 contact us and we can help you follow our human/AI setup. 
